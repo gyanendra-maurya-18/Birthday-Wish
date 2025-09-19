@@ -29,7 +29,7 @@
       color: #d4418e;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
       cursor: pointer;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       display: inline-block;
     }
 
@@ -53,6 +53,7 @@
     #giftBox:hover, #giftIcon:hover {
       transform: scale(1.1);
     }
+
     /* Click hint text */
     .click-hint {
       font-size: 1rem;
@@ -60,6 +61,7 @@
       margin-top: 8px;
       animation: blink 1.5s infinite;
     }
+
     @keyframes blink {
       50% { opacity: 0.3; }
     }
@@ -145,12 +147,10 @@
 
     <!-- 🎁 Gift Box -->
     <div id="giftBox" title="Click to open">🎁</div>
-    <div class="click-hint">Click me🎁</div>
-    
+    <div class="click-hint">Click me 🎁</div>
 
     <!-- Surprise content -->
-    <div class="message" id="birthdayMessage"><h1>Happy Birthdad
-      Shivangi! </h1>🎉</div>
+    <div class="message" id="birthdayMessage">Happy Birthday Shivangi! 🎉</div>
     <div class="cake-photo-container" id="cakeContainer">
       <img src="Cake.jpg"
            alt="Cake" class="cake-photo" />
@@ -165,9 +165,9 @@
     </div>
   </div>
 
-    <!-- 🎶 Birthday Music -->
+  <!-- 🎶 Birthday Music -->
   <audio id="birthdayMusic" loop>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+    <source src="music.mp3" type="audio/mpeg" />
   </audio>
 
   <script>
@@ -183,16 +183,13 @@
       giftIcon.style.display = "none";
       document.querySelector(".click-hint").style.display = "none";
 
-
-      
       birthdayMessage.classList.add("show");
       cakeContainer.classList.add("show");
       imagesContainer.classList.add("show");
 
       startFalling();
-    }
 
-    // 🎶 Play music
+      // 🎶 Play music
       music.play().catch(e => console.log("Music autoplay blocked:", e));
     }
 
@@ -202,7 +199,7 @@
 
     // Falling celebration effect
     function startFalling() {
-      const symbols = ["🎉","🥰","❤️", "✨", "🥳", "🎊", "⭐"];
+      const symbols = ["🎉","🥰","❤️","✨", "🥳", "🎊", "⭐"];
       setInterval(() => {
         const element = document.createElement("div");
         element.classList.add("falling");
@@ -214,7 +211,7 @@
         setTimeout(() => {
           element.remove();
         }, 4000);
-      }, 200); // faster spawn rate
+      }, 200);
     }
   </script>
 </body>
